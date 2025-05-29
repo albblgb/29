@@ -17,7 +17,7 @@
       box-sizing: border-box;
     }
     .container {
-      width: 75vw;
+      width: 80vw;
       min-width: 320px;
       max-width: 1000px;
       margin: 40px auto 0 auto;
@@ -63,7 +63,6 @@
     .links a:last-child {
       margin-right: 0;
     }
-    /* 标题与内容的间隔调整为2/3*28px ≈ 19px，为统一也调整模块间距 */
     h2, .section-title, .news-title {
       font-size: 1.35em;
       font-weight: bold;
@@ -95,11 +94,11 @@
     }
     .biography-section {
       font-size: 1.15em;
-      margin-bottom: 15px; /* 段落间距略小 */
-      line-height: 1.25;   /* 行间距 1.25 */
+      margin-bottom: 15px;
+      line-height: 1.25;
     }
     .biography-section p {
-      margin: 0 0 12px 0; /* 段落间距略小 */
+      margin: 0 0 12px 0;
     }
     .biography-section a {
       color: #2676c7;
@@ -120,7 +119,7 @@
     }
     .news-list li {
       margin-bottom: 7px;
-      line-height: 1.25; /* 多倍行距 */
+      line-height: 1.25;
       font-size: 1.15em;
     }
     .news-list a {
@@ -133,17 +132,120 @@
     .news-list b {
       font-size: 1em;
     }
+    /* Selected Publications */
+    .publications-section {
+      margin-bottom: 20px;
+    }
+    .publications-title {
+      font-size: 1.35em;
+      font-weight: bold;
+      margin-top: 19px;
+      margin-bottom: 7px;
+    }
+    .equal-contribution-note {
+      padding-left: 0;
+      margin-left: 0;
+      margin-bottom: 4px;
+      font-size: 1.08em;
+    }
+    .publication-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .publication-item {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 18px;
+      gap: 25px;
+    }
+    .pub-image {
+      width: 230px;
+      min-width: 140px;
+      max-width: 260px;
+      margin-right: 10px;
+      border-radius: 6px;
+      border: 1px solid #eee;
+      background: #fafafa;
+      object-fit: cover;
+      height: auto;
+      align-self: flex-start;
+      box-shadow: 0 2px 5px #0001;
+    }
+    .pub-info {
+      flex: 1 1 0;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+    .pub-title {
+      font-weight: bold;
+      font-size: 1.10em;
+      margin-bottom: 2px;
+      margin-top: 0;
+    }
+    .pub-authors {
+      margin-bottom: 3px;
+      margin-top: 0;
+      font-size: 1em;
+    }
+    .pub-authors .me {
+      font-weight: bold;
+      text-decoration: underline;
+    }
+    .pub-venue {
+      color: #444;
+      font-size: 1em;
+      margin-bottom: 2px;
+    }
+    .pub-links {
+      margin-top: 2px;
+      font-size: 0.97em;
+      color: #2676c7;
+    }
+    .pub-links a {
+      color: #2676c7;
+      margin-right: 10px;
+      text-decoration: none;
+    }
+    .pub-links a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 900px) {
+      .container {
+        width: 94vw;
+        min-width: 0;
+        margin: 20px auto 0 auto;
+      }
+      .main-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .profile-pic {
+        margin: 30px 0 0 0;
+      }
+      .publication-item {
+        flex-direction: column;
+        gap: 4px;
+      }
+      .pub-image {
+        max-width: 98vw;
+        width: 100%;
+        margin-bottom: 10px;
+      }
+    }
     /* Professional Services & Awards */
     .professional-list, .awards-list {
       font-size: 1.08em;
       margin-bottom: 20px;
       padding-left: 20px;
-      margin-top: 0; /* 跟News一致，紧贴标题 */
+      margin-top: 0;
     }
     .professional-list li,
     .awards-list li {
       margin-bottom: 4px;
-      line-height: 1.25; /* 多倍行距 */
+      line-height: 1.25;
     }
     .awards-list {
       list-style-type: disc;
@@ -165,36 +267,6 @@
       text-align: right;
       font-style: italic;
       color: #222;
-    }
-    /* 使 equal contribution 与 Selected Publications 左对齐 */
-    .equal-contribution-note {
-      padding-left: 0;
-      margin-left: 0;
-      margin-bottom: 4px;
-      font-size: 1.08em;
-    }
-    @media (max-width: 900px) {
-      .container {
-        width: 94vw;
-        min-width: 0;
-        margin: 20px auto 0 auto;
-      }
-      .main-header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .profile-pic {
-        margin: 30px 0 0 0;
-      }
-      .award-row {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .award-year {
-        margin-left: 0;
-        text-align: left;
-        min-width: 0;
-      }
     }
   </style>
 </head>
@@ -237,17 +309,47 @@
       <br><br>
       You can contact me via email at 17852948808@163.com ！
     </div>
+
+    <!-- Selected Publications Section -->
+    <div class="publications-section">
+      <div class="publications-title">Selected Publications</div>
+      <div class="equal-contribution-note">* equal contribution</div>
+      <ul class="publication-list">
+        <li class="publication-item">
+          <img class="pub-image" src="https://raw.githubusercontent.com/albblgb/29/main/imgs/pub_fulldit.png" alt="FullDiT Figure">
+          <div class="pub-info">
+            <div class="pub-title">FullDiT: Multi-Task Video Generative Foundation Model with Full Attention</div>
+            <div class="pub-authors">
+              <span class="me">Xuan Ju</span>, Weicai Ye, Quande Liu, Qiulin Wang, Xintao Wang, Pengfei Wan, Di Zhang, Kun Gai, Qiang Xu.
+            </div>
+            <div class="pub-venue">Under Review</div>
+            <div class="pub-links">
+              <a href="#" target="_blank">Project</a> /
+              <a href="#" target="_blank">arXiv</a> /
+              <a href="#" target="_blank">Video</a> /
+              <a href="#" target="_blank">Data</a>
+            </div>
+          </div>
+        </li>
+        <li class="publication-item">
+          <img class="pub-image" src="https://raw.githubusercontent.com/albblgb/29/main/imgs/pub_teletubbies.png" alt="Teletubbies Figure">
+          <div class="pub-info">
+            <div class="pub-title">Teletubbies: On Design Choices of Scaling Autoregressive Models for Image Generation</div>
+            <div class="pub-authors">
+              Yushi Hu<sup>*</sup>, <span class="me">Xuan Ju<sup>*</sup></span>, Xu Ma<sup>*</sup>, Yujun Shi<sup>*</sup>, Xiaoliang Dai, Peizhao Zhang, Jialiang Wang, Ji Hou, Yen-Cheng Liu, Haochen Zhang, Tao Xu, Felix Juefei-Xu, Ching-Yao Chuang, Zecheng He, Junjiao Tian, Tingbo Hou, Peter Vajda, Qiang Xu, Yun Fu, Vincent Y. F. Tan, Mari Ostendorf, Noah A. Smith, Zijian He, Sam Tsai, Kunpeng Li, Chih-Yao Ma.
+            </div>
+            <div class="pub-venue">Under Review</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <!-- End Selected Publications Section -->
+
     <div class="news-title">News</div>
     <ul class="news-list">
-      <li><b>[05/2025]</b> I establish my own website. </a>.</li>
+      <li><b>[05/2025]</b> I establish my own website.</li>
     </ul>
 
-    <div class="news-title">Selected Publications</div>
-    <div class="equal-contribution-note">* equal contribution, # Corresponding author</div>
-    <ul class="news-list">
-      <li>To do</li>
-    </ul>
-    
     <div class="news-title">Projects</div>
     <ul class="news-list">
       <li>No</li>
