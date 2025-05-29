@@ -63,10 +63,12 @@
     .links a:last-child {
       margin-right: 0;
     }
-    h2 {
-      margin-top: 30px;
-      margin-bottom: 10px;
+    /* 标题与内容的间隔调整为2/3*28px ≈ 19px，为统一也调整模块间距 */
+    h2, .section-title, .news-title {
       font-size: 1.35em;
+      font-weight: bold;
+      margin-top: 19px;
+      margin-bottom: 7px;
     }
     .tags {
       display: flex;
@@ -93,8 +95,11 @@
     }
     .biography-section {
       font-size: 1.15em;
-      margin-bottom: 28px;
-      line-height: 1.7;
+      margin-bottom: 15px; /* 段落间距略小 */
+      line-height: 1.25;   /* 行间距 1.25 */
+    }
+    .biography-section p {
+      margin: 0 0 12px 0; /* 段落间距略小 */
     }
     .biography-section a {
       color: #2676c7;
@@ -103,20 +108,19 @@
     .biography-section a:hover {
       text-decoration: underline;
     }
-    .news-title {
-      font-size: 1.35em;
-      font-weight: bold;
-      margin-top: 28px;
-      margin-bottom: 10px;
+    .news-title,
+    .section-title {
+      margin-top: 19px;
+      margin-bottom: 7px;
     }
     .news-list {
       margin-top: 0;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
       padding-left: 20px;
     }
     .news-list li {
       margin-bottom: 7px;
-      line-height: 1.6;
+      line-height: 1.25; /* 多倍行距 */
       font-size: 1.15em;
     }
     .news-list a {
@@ -130,21 +134,16 @@
       font-size: 1em;
     }
     /* Professional Services & Awards */
-    .section-title {
-      font-size: 1.35em;
-      font-weight: bold;
-      margin-top: 28px;
-      margin-bottom: 10px;
-    }
     .professional-list, .awards-list {
       font-size: 1.08em;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
       padding-left: 20px;
+      margin-top: 0; /* 跟News一致，紧贴标题 */
     }
     .professional-list li,
     .awards-list li {
       margin-bottom: 4px;
-      line-height: 1.7;
+      line-height: 1.25; /* 多倍行距 */
     }
     .awards-list {
       list-style-type: disc;
