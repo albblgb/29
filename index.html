@@ -1,15 +1,31 @@
-```html name=index.html
+<!-- ```html name=index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Xuan Ju</title>
+  <title>Guobiao Li</title>
   <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
     body {
       font-family: Arial, sans-serif;
-      margin: 40px;
       color: #222;
       background: #fff;
+      min-height: 100vh;
+      box-sizing: border-box;
+    }
+    .container {
+      width: 50vw;
+      min-width: 320px;
+      max-width: 700px;
+      margin: 40px auto 0 auto;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
     }
     .main-header {
       display: flex;
@@ -53,26 +69,35 @@
       margin-bottom: 10px;
       font-size: 1.25em;
     }
-    .news-list {
-      margin-top: 0;
-      margin-bottom: 30px;
-      padding-left: 20px;
+    .tags {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 25px;
+      margin-top: 5px;
     }
-    .news-list li {
-      margin-bottom: 7px;
-      line-height: 1.6;
-    }
-    .news-list b {
+    .tag {
+      display: flex;
+      align-items: center;
+      background: #f5f5f5;
+      color: #444;
+      border-radius: 8px;
+      padding: 4px 12px;
       font-size: 1em;
+      gap: 6px;
     }
-    a {
-      color: #2676c7;
-      text-decoration: none;
+    .tag svg {
+      width: 16px;
+      height: 16px;
+      vertical-align: middle;
     }
-    a:hover {
-      text-decoration: underline;
-    }
-    @media (max-width: 700px) {
+    @media (max-width: 900px) {
+      .container {
+        width: 94vw;
+        min-width: 0;
+        margin: 20px auto 0 auto;
+      }
       .main-header {
         flex-direction: column;
         align-items: flex-start;
@@ -84,43 +109,55 @@
   </style>
 </head>
 <body>
-  <div class="main-header">
-    <div class="info">
-      <h1>Xuan Ju</h1>
-      <div class="subtitle">
-        Ph.D. Candidate<br>
-        Computer Science and Engineering<br>
-        The Chinese University of Hong Kong
+  <div class="container">
+    <div class="main-header">
+      <div class="info">
+        <h1>Guobiao Li</h1>
+        <div class="subtitle">
+          Postdoctoral Researcher<br>
+          MAS Lab, Fudan University
+        </div>
+        <div class="links">
+          <a href="mailto:your.email@fudan.edu.cn">E-mail</a> /
+          <a href="#">Google Scholar</a> /
+          <a href="#">GitHub</a>
+        </div>
+        <div class="tags">
+          <span class="tag">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="5" rx="2" stroke="currentColor" stroke-width="1.5" fill="none"></rect><path d="M8 12h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg>
+            Information Hiding
+          </span>
+          <span class="tag">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" fill="none"></circle><path d="M8 12h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg>
+            AI Security
+          </span>
+          <span class="tag">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="6" y="9" width="12" height="6" rx="2" stroke="currentColor" stroke-width="1.5" fill="none"></rect><path d="M12 15V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg>
+            Steganography
+          </span>
+          <span class="tag">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 5v14m7-7H5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg>
+            Watermarking
+          </span>
+          <span class="tag">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 2v20m10-10H2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg>
+            Adversarial Examples
+          </span>
+          <span class="tag">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" fill="none"></circle><path d="M9 12l2 2l4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg>
+            Model Backdoors
+          </span>
+        </div>
       </div>
-      <div class="links">
-        <a href="mailto:juxuan.27@gmail.com">E-mail</a> /
-        <a href="#">CV</a> /
-        <a href="#">Google Scholar</a> /
-        <a href="#">Github</a>
-      </div>
+      <img src="image1" alt="Profile Photo" class="profile-pic">
     </div>
-    <img src="image1" alt="Profile Photo" class="profile-pic">
+    <h2>Biography</h2>
+    <div>
+      Hi, I'm Guobiao Li (李国标). I am currently a Postdoctoral Researcher in the MAS Lab at Fudan University, supervised by Prof. Xinpeng Zhang. Before this, I majored in Computer Science and Technology (with a minor in Cyberspace Security) and obtained my Ph.D. degree from Fudan University.
+      <br><br>
+      I have a broad interest in most areas of information hiding and AI security, including steganography, watermarking, adversarial examples, and model backdoors.
+    </div>
   </div>
-  
-  <h2>Biography</h2>
-  <div>
-    Hi, I'm Xuan Ju (鞠璇). I am currently a third-year Ph.D. student in the
-    <a href="https://cure-lab.github.io/" target="_blank">CURE Lab</a> at
-    <a href="https://www.cuhk.edu.hk/" target="_blank">The Chinese University of Hong Kong</a>
-    guided by <a href="https://scholar.google.com/citations?user=qQy5Qe0AAAAJ" target="_blank">Pro. Qiang Xu</a>.
-    Before this, I majored in Computer Science and Technology (minored in Mathematics and Applied Mathematics) and got my bachelor's degree from Tongji University.
-    <br><br>
-    I have a broad interest in most areas of computer vision, especially in image/video generation and multi-modal models. Please do not hesitate to reach out to me via email at
-    <a href="mailto:juxuan.27@gmail.com">juxuan.27@gmail.com</a>!
-  </div>
-  
-  <h2>News</h2>
-  <ul class="news-list">
-    <li><b>[05/2025]</b> We are hosting the CVPR 2025 Workshop on <a href="https://cure-lab.github.io/EDGE2025/" target="_blank">Efficient and On-Device Generation (EDGE)</a>.</li>
-    <li><b>[04/2025]</b> Start an internship in <a href="https://adoberesearch.github.io/" target="_blank">Adobe Research</a> with <a href="https://scholar.google.com/citations?user=Q4f9Hh8AAAAJ" target="_blank">Soo Ye Kim</a> and <a href="https://scholar.google.com/citations?user=4T0K1zEAAAAJ" target="_blank">Zhe Lin</a>.</li>
-    <li><b>[04/2025]</b> <a href="https://github.com/Cure-Lab/VideoPainter" target="_blank">VideoPainter</a> and <a href="https://github.com/Cure-Lab/Cobra" target="_blank">Cobra</a> are accepted to SIGGRAPH 2025.</li>
-    <li><b>[03/2025]</b> We release a multi-task video generation model based on full-attention, <a href="https://github.com/Cure-Lab/FullDiT" target="_blank">FullDiT</a>.</li>
-  </ul>
 </body>
 </html>
-```
+<!-- ``` -->
